@@ -5,7 +5,7 @@ from predict import run_prediction
 
 st.set_page_config(layout="wide")
 
-model_list = ['akdeniz27/roberta-base-cuad']
+model_list = ['alex-apostolo/legal-bert-small-cuad']
 
 model_checkpoint = model_list[0]
 
@@ -88,9 +88,9 @@ elif search_type == "Contract Search":
 Run_Button = st.button("Run", key=None)
 if Run_Button == True and not len(contract) == 0 and not len(question_set) == 0:
     if search_type == "Title Search":
-        predictions = run_prediction(question_set, title, 'akdeniz27/roberta-base-cuad')
+        predictions = run_prediction(question_set, title, 'alex-apostolo/legal-bert-small-cuad')
     else:
-        predictions = run_prediction(question_set, contract, 'akdeniz27/roberta-base-cuad')
+        predictions = run_prediction(question_set, contract, 'alex-apostolo/legal-bert-small-cuad')
 
     for i, p in enumerate(predictions):
         print(predictions[p])
